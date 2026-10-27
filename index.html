@@ -3,169 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botspresso | El Futuro del Café de Especialidad Robótico</title>
+    <title>Botspresso | Café de Especialidad Servido por Robótica</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    
+    <!-- Fuentes Google que coinciden con el estilo del logotipo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['Syne', 'sans-serif']
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
                     },
                     colors: {
-                        coffee: {
-                            50: '#FAF6F0',
-                            100: '#F4ECE1',
-                            200: '#E6D5C3',
-                            500: '#C08244',
-                            700: '#7A4B22',
-                            900: '#1B1512',
-                            950: '#0E0B09'
-                        },
-                        amberGold: '#F59E0B'
+                        creamBg: '#FAF7F2',       // El fondo crema exacto del logo
+                        creamCard: '#FFFFFF',     // Tarjetas blancas limpias
+                        creamSoft: '#F2ECE1',     // Contrastes suaves
+                        espresso: '#221A15',      // El color café espresso profundo del trazo
+                        espressoLight: '#3D312A',
+                        espressoMuted: '#6B5E55',
+                        accentCaramel: '#C88A42', // Tono caramelo cálido
+                        accentWarm: '#E5A967'
                     }
                 }
             }
         }
     </script>
     <style>
-        .hero-glow {
-            background: radial-gradient(circle at 50% 30%, rgba(245, 158, 11, 0.15) 0%, rgba(14, 11, 9, 0) 70%);
+        .stroke-brand {
+            border-color: #221A15;
         }
-        .card-blur {
-            background: rgba(27, 21, 18, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+        .shadow-warm {
+            box-shadow: 0 10px 30px -10px rgba(34, 26, 21, 0.08);
+        }
+        .shadow-warm-hover:hover {
+            box-shadow: 0 15px 35px -8px rgba(34, 26, 21, 0.15);
         }
     </style>
 </head>
-<body class="bg-coffee-950 text-coffee-50 font-sans selection:bg-amberGold selection:text-coffee-950 antialiased">
+<body class="bg-creamBg text-espresso font-sans antialiased selection:bg-espresso selection:text-creamBg">
 
-    <!-- NAVEGACIÓN -->
-    <nav class="fixed top-0 left-0 right-0 z-50 card-blur border-b border-coffee-700/30 transition-all duration-300">
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-creamBg/95 backdrop-blur-md border-b-2 border-espresso/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <!-- Brand -->
+            
+            <!-- Logo oficial -->
             <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amberGold to-coffee-700 p-0.5 shadow-lg shadow-amberGold/20">
-                    <div class="w-full h-full bg-coffee-950 rounded-[10px] flex items-center justify-center">
-                        <span class="font-display text-lg font-bold text-amberGold">B</span>
-                    </div>
-                </div>
-                <span class="font-display text-2xl font-bold tracking-tight text-white group-hover:text-amberGold transition">
-                    BOTSPRESSO
+                <img src="/logo.png" alt="Botspresso Logo" class="h-11 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/simoncohenestilodf/botspresso-web/main/logo.png';">
+                <span class="text-2xl font-black tracking-tight text-espresso font-sans">
+                    Botspresso
                 </span>
             </a>
 
-            <!-- Links Desktop -->
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-coffee-200">
-                <a href="#experiencia" class="hover:text-amberGold transition">Experiencia</a>
-                <a href="#menu" class="hover:text-amberGold transition">Menú & Lab</a>
-                <a href="#ubicaciones" class="hover:text-amberGold transition">Ubicaciones</a>
-                <a href="#alianzas" class="hover:text-amberGold transition">Plazas & Alianzas</a>
+            <!-- Enlaces Desktop -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-bold text-espresso/80">
+                <a href="#experiencia" class="hover:text-accentCaramel transition">El Café</a>
+                <a href="#menu" class="hover:text-accentCaramel transition">Menú & Recetas</a>
+                <a href="#kioscos" class="hover:text-accentCaramel transition">Kioscos Activos</a>
+                <a href="#plazas" class="hover:text-accentCaramel transition">Instalar en tu Inmueble</a>
             </div>
 
-            <!-- Botones CTA -->
-            <div class="flex items-center space-x-4">
-                <a href="https://botpresso-pnl.onrender.com" target="_blank" class="hidden sm:inline-block text-xs font-semibold px-3 py-1.5 rounded-lg border border-coffee-700/60 text-coffee-200 hover:text-white hover:border-amberGold transition">
+            <!-- Accesos Rápidos -->
+            <div class="flex items-center space-x-3">
+                <a href="https://botpresso-pnl.onrender.com" target="_blank" class="hidden sm:inline-block text-xs font-bold px-3 py-2 rounded-xl border-2 border-espresso/20 text-espresso hover:border-espresso transition">
                     Portal P&L ↗
                 </a>
-                <a href="#alianzas" class="bg-gradient-to-r from-amberGold to-amber-600 hover:from-amber-500 hover:to-amber-600 text-coffee-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-lg shadow-amberGold/20 transition-all hover:scale-105 active:scale-95">
-                    Instalar Robot
+                <a href="#plazas" class="bg-espresso hover:bg-espressoLight text-creamBg font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-warm transition-all hover:scale-105 active:scale-95">
+                    Cotizar Espacio
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden hero-glow">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- HERO PRINCIPAL -->
+    <header class="relative pt-36 pb-20 md:pt-48 md:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-amberGold/30 bg-amberGold/10 text-amberGold text-xs font-semibold uppercase tracking-wider">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        <span>Robots Activos: AIFA & Patio Santa Fe</span>
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border-2 border-espresso/15 bg-creamSoft text-espresso text-xs font-black uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        <span>Robots Baristas en Vivo: AIFA & Patio Santa Fe</span>
                     </div>
 
-                    <h1 class="font-display text-4xl sm:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight">
-                        Precisión Robótica.<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberGold via-amber-400 to-amber-600">
-                            Café de Especialidad.
-                        </span>
+                    <h1 class="text-4xl sm:text-6xl xl:text-7xl font-black leading-[1.08] tracking-tight text-espresso">
+                        Café de Especialidad.<br>
+                        <span class="text-accentCaramel">Servido con Precisión Robótica.</span>
                     </h1>
 
-                    <p class="text-coffee-200 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                        Botspresso fusiona la robótica de alta ingeniería con granos mexicanos de altura seleccionados. Cada taza servida en menos de 60 segundos con temperatura, molienda y presión milimétricamente perfectas.
+                    <p class="text-espressoMuted text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                        Unimos los mejores granos de altura mexicanos con brazos robóticos de alta tecnología. Cero margen de error humano: temperatura constante, molienda perfecta y servido en menos de 50 segundos.
                     </p>
 
-                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#menu" class="w-full sm:w-auto bg-amberGold hover:bg-amber-400 text-coffee-950 font-bold px-8 py-3.5 rounded-xl shadow-xl shadow-amberGold/25 transition text-center text-sm uppercase tracking-wider">
-                            Explorar Menú & Recetas
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#menu" class="w-full sm:w-auto bg-espresso hover:bg-espressoLight text-creamBg font-black px-8 py-4 rounded-xl shadow-warm transition text-center text-sm uppercase tracking-wider">
+                            Explorar Menú & Bebidas
                         </a>
-                        <a href="#ubicaciones" class="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-coffee-700 hover:border-amberGold card-blur text-sm font-semibold text-coffee-100 hover:text-white transition text-center">
+                        <a href="#kioscos" class="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-espresso bg-white hover:bg-creamSoft text-sm font-black text-espresso transition text-center">
                             Encontrar mi Kiosco
                         </a>
                     </div>
 
-                    <!-- Métricas destacadas -->
-                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-coffee-700/40 max-w-lg mx-auto lg:mx-0">
+                    <!-- Métricas de Confianza -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t-2 border-espresso/10 max-w-lg mx-auto lg:mx-0">
                         <div>
-                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-amberGold">45 seg</div>
-                            <div class="text-xs text-coffee-200 font-medium">Extracción express</div>
+                            <div class="text-3xl sm:text-4xl font-black text-espresso">45s</div>
+                            <div class="text-xs text-espressoMuted font-bold mt-1">Extracción rápida</div>
                         </div>
                         <div>
-                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-white">100%</div>
-                            <div class="text-xs text-coffee-200 font-medium">Grano Mexicano</div>
+                            <div class="text-3xl sm:text-4xl font-black text-accentCaramel">100%</div>
+                            <div class="text-xs text-espressoMuted font-bold mt-1">Grano Mexicano</div>
                         </div>
                         <div>
-                            <div class="font-display text-2xl sm:text-3xl font-extrabold text-amberGold">0%</div>
-                            <div class="text-xs text-coffee-200 font-medium">Error de receta</div>
+                            <div class="text-3xl sm:text-4xl font-black text-espresso">0%</div>
+                            <div class="text-xs text-espressoMuted font-bold mt-1">Variación de receta</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Showcase Ilustrativo -->
+                <!-- Showcase con el Logo Ilustrado -->
                 <div class="lg:col-span-5 flex justify-center">
                     <div class="relative w-full max-w-md">
-                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-amberGold/40 to-coffee-700/40 blur-2xl opacity-60"></div>
-                        <div class="relative rounded-3xl card-blur border border-coffee-700/60 p-6 space-y-6">
+                        <div class="bg-white border-2 border-espresso rounded-3xl p-8 space-y-6 shadow-warm shadow-warm-hover transition duration-300">
                             
-                            <!-- Header de estatus del brazo -->
-                            <div class="flex items-center justify-between border-b border-coffee-700/40 pb-4">
-                                <div class="flex items-center space-x-3">
-                                    <span class="relative flex h-3 w-3">
-                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                                    </span>
-                                    <span class="text-xs font-bold text-coffee-100 uppercase tracking-wider">Robot Barista #01</span>
+                            <div class="flex items-center justify-between border-b-2 border-espresso/10 pb-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
+                                    <span class="text-xs font-black uppercase tracking-wider text-espresso">Kiosco #01 • AIFA</span>
                                 </div>
-                                <span class="text-[11px] bg-coffee-900 border border-coffee-700 px-2 py-0.5 rounded text-amberGold font-mono">
+                                <span class="text-xs bg-creamSoft border border-espresso/15 px-2.5 py-1 rounded-lg text-espresso font-mono font-bold">
                                     92.5°C | 9.0 BAR
                                 </span>
                             </div>
 
-                            <!-- Visual simulador -->
-                            <div class="aspect-square rounded-2xl bg-gradient-to-b from-coffee-900 to-coffee-950 border border-coffee-700/40 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden group">
-                                <div class="w-32 h-32 rounded-full border-2 border-dashed border-amberGold/40 flex items-center justify-center animate-[spin_30s_linear_infinite]">
-                                    <div class="w-20 h-20 rounded-full bg-amberGold/10 flex items-center justify-center">
-                                        <span class="text-4xl">☕</span>
-                                    </div>
-                                </div>
-                                <div class="mt-6">
-                                    <div class="font-display font-bold text-lg text-white">Extracción Doble Ristretto</div>
-                                    <div class="text-xs text-coffee-200 mt-1">Calibración de perfil aromático en curso</div>
-                                </div>
+                            <div class="aspect-square rounded-2xl bg-creamBg border-2 border-espresso/10 flex flex-col items-center justify-center p-6 text-center">
+                                <img src="/logo.png" alt="Botspresso Barista" class="h-48 w-auto object-contain drop-shadow-md mb-2 transition-transform duration-500 hover:scale-105" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/simoncohenestilodf/botspresso-web/main/logo.png';">
+                                <span class="text-xs font-black uppercase tracking-widest text-accentCaramel">Calibración en tiempo real</span>
                             </div>
 
-                            <div class="p-3 bg-coffee-900/60 rounded-xl border border-coffee-700/30 flex justify-between items-center text-xs text-coffee-200">
-                                <span>Tiempo de espera estimado</span>
-                                <span class="font-bold text-emerald-400">1 minuto</span>
+                            <div class="p-3 bg-creamSoft rounded-xl border border-espresso/10 flex justify-between items-center text-xs font-bold text-espresso">
+                                <span>Tiempo de espera promedio:</span>
+                                <span class="text-emerald-700 font-extrabold">&lt; 1 minuto</span>
                             </div>
                         </div>
                     </div>
@@ -175,317 +158,318 @@
         </div>
     </header>
 
-    <!-- SECCIÓN: EXPERIENCIA Y TECNOLOGÍA -->
-    <section id="experiencia" class="py-24 border-t border-coffee-700/30 bg-coffee-900/30">
+    <!-- FILOSOFÍA Y CALIDAD -->
+    <section id="experiencia" class="py-24 border-t-2 border-espresso/10 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-bold text-amberGold tracking-widest uppercase">Estándar de Calidad</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-bold">Por qué Botspresso supera cualquier barra tradicional</h2>
-                <p class="text-coffee-200 text-sm sm:text-base leading-relaxed">
-                    Eliminamos la inconsistencia humana para garantizar que tu café de todos los días tenga exactamente el mismo balance, cuerpo y crema.
+                <span class="text-xs font-black text-accentCaramel tracking-widest uppercase">Estándar Botspresso</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-espresso">El balance perfecto entre arte y robótica</h2>
+                <p class="text-espressoMuted text-sm sm:text-base leading-relaxed">
+                    Un barista tradicional puede cansarse o variar la técnica; nuestro robot replica la receta ganadora copa tras copa con idéntica cremosidad y aroma.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Tarjeta 1 -->
-                <div class="card-blur border border-coffee-700/40 p-8 rounded-2xl hover:border-amberGold/60 transition group space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-2xl group-hover:scale-110 transition">
-                        🎯
+                <div class="bg-creamBg border-2 border-espresso/15 p-8 rounded-2xl hover:border-espresso transition space-y-4 shadow-warm">
+                    <div class="w-12 h-12 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-2xl text-espresso font-bold">
+                        ⚙️
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white">Presión y Temperatura Constante</h3>
-                    <p class="text-coffee-200 text-sm leading-relaxed">
-                        Control milimétrico a 9.2 bares y 92°C de temperatura constante en el cabezal de extracción. Cero riesgo de café quemado o subextraído.
+                    <h3 class="text-xl font-black text-espresso">Repetibilidad Milimétrica</h3>
+                    <p class="text-espressoMuted text-sm leading-relaxed">
+                        Control exhaustivo del tiempo de infusión, ratio de café y volumen de agua. Siempre obtienes el sabor exacto que elegiste.
                     </p>
                 </div>
 
                 <!-- Tarjeta 2 -->
-                <div class="card-blur border border-coffee-700/40 p-8 rounded-2xl hover:border-amberGold/60 transition group space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                <div class="bg-creamBg border-2 border-espresso/15 p-8 rounded-2xl hover:border-espresso transition space-y-4 shadow-warm">
+                    <div class="w-12 h-12 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-2xl text-espresso font-bold">
                         🌱
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white">Origen Chiapas y Veracruz</h3>
-                    <p class="text-coffee-200 text-sm leading-relaxed">
-                        Tueste medio fresco, 100% arábica de estricta altura (1,300+ msnm). Con notas a chocolate amargo, avellana tostada y sutil acidez cítrica.
+                    <h3 class="text-xl font-black text-espresso">Origen Chiapas & Veracruz</h3>
+                    <p class="text-espressoMuted text-sm leading-relaxed">
+                        100% arábica de estricta altura. Tueste medio fresco con notas a chocolate amargo, frutos secos y una dulzura acaramelada natural.
                     </p>
                 </div>
 
                 <!-- Tarjeta 3 -->
-                <div class="card-blur border border-coffee-700/40 p-8 rounded-2xl hover:border-amberGold/60 transition group space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                <div class="bg-creamBg border-2 border-espresso/15 p-8 rounded-2xl hover:border-espresso transition space-y-4 shadow-warm">
+                    <div class="w-12 h-12 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-2xl text-espresso font-bold">
                         ⚡
                     </div>
-                    <h3 class="font-display text-xl font-bold text-white">Velocidad Sin Filas</h3>
-                    <p class="text-coffee-200 text-sm leading-relaxed">
-                        Pide, paga en pantalla o con tu teléfono y recoge en menos de un minuto. Ideal para aeropuertos y centros corporativos con alta afluencia.
+                    <h3 class="text-xl font-black text-espresso">Sin Filas Ni Esperas</h3>
+                    <p class="text-espressoMuted text-sm leading-relaxed">
+                        Pide en segundos desde la pantalla interactiva o tu celular y recoge tu bebida al instante. Diseñado para personas con prisa.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MENÚ Y PERSONALIZADOR INTERACTIVO -->
-    <section id="menu" class="py-24 border-t border-coffee-700/30">
+    <!-- MENÚ Y SIMULADOR DE BEBIDAS -->
+    <section id="menu" class="py-24 border-t-2 border-espresso/10 bg-creamBg">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-bold text-amberGold tracking-widest uppercase">Drink Lab Simulator</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-bold">Personaliza tu bebida ideal</h2>
-                <p class="text-coffee-200 text-sm sm:text-base">
-                    Diseña tu receta en tiempo real y descubre el perfil que preparará el brazo robótico.
+                <span class="text-xs font-black text-accentCaramel tracking-widest uppercase">Barra Digital</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-espresso">Personaliza tu Café</h2>
+                <p class="text-espressoMuted text-sm sm:text-base">
+                    Simula la receta exacta que le enviaremos al brazo robótico para su extracción.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- Controles -->
-                <div class="lg:col-span-7 card-blur border border-coffee-700/50 rounded-2xl p-6 sm:p-8 space-y-6">
+                
+                <!-- Opciones -->
+                <div class="lg:col-span-7 bg-white border-2 border-espresso rounded-3xl p-6 sm:p-8 space-y-6 shadow-warm">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-coffee-200 mb-3">1. Selecciona la Base</label>
+                        <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-3">1. Selecciona la Base de Café</label>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                            <button onclick="setBase('Americano', 55, 'Espresso doble extraído sobre agua purificada a 88°C.')" class="btn-base py-3 px-4 rounded-xl border border-amberGold bg-amberGold/15 text-white text-xs font-bold text-left transition">
+                            <button onclick="setBase('Americano', 55, 'Espresso doble sobre agua caliente purificada.')" class="btn-base py-3 px-4 rounded-xl border-2 border-espresso bg-creamSoft text-espresso text-xs font-black text-left transition">
                                 Americano Clásico
                             </button>
-                            <button onclick="setBase('Latte', 65, 'Espresso suave con leche cremada y microespuma sedosa.')" class="btn-base py-3 px-4 rounded-xl border border-coffee-700 card-blur text-coffee-200 hover:text-white text-xs font-bold text-left transition">
+                            <button onclick="setBase('Café Latte', 65, 'Espresso suave con leche cremada y microespuma aterciopelada.')" class="btn-base py-3 px-4 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 hover:text-espresso text-xs font-bold text-left transition">
                                 Café Latte
                             </button>
-                            <button onclick="setBase('Cappuccino', 65, 'Capas balanceadas: espresso, leche evaporada y espuma densa.')" class="btn-base py-3 px-4 rounded-xl border border-coffee-700 card-blur text-coffee-200 hover:text-white text-xs font-bold text-left transition">
+                            <button onclick="setBase('Cappuccino', 65, 'Capas proporcionales: espresso intenso, leche y espuma espesa.')" class="btn-base py-3 px-4 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 hover:text-espresso text-xs font-bold text-left transition">
                                 Cappuccino
                             </button>
-                            <button onclick="setBase('Flat White', 70, 'Doble ristretto intenso con capa fina de microespuma aterciopelada.')" class="btn-base py-3 px-4 rounded-xl border border-coffee-700 card-blur text-coffee-200 hover:text-white text-xs font-bold text-left transition">
+                            <button onclick="setBase('Flat White', 70, 'Doble ristretto concentrado con microespuma densa.')" class="btn-base py-3 px-4 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 hover:text-espresso text-xs font-bold text-left transition">
                                 Flat White
                             </button>
-                            <button onclick="setBase('Espresso Doble', 48, 'Dos onzas de pura crema espesa, sabor intenso y cuerpo denso.')" class="btn-base py-3 px-4 rounded-xl border border-coffee-700 card-blur text-coffee-200 hover:text-white text-xs font-bold text-left transition">
+                            <button onclick="setBase('Espresso Doble', 48, 'Dos onzas de pura intensidad con crema dorada espesa.')" class="btn-base py-3 px-4 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 hover:text-espresso text-xs font-bold text-left transition">
                                 Espresso Doble
                             </button>
-                            <button onclick="setBase('Mocha Especial', 75, 'Espresso artesanal, cocoa premium de Oaxaca y leche vaporizada.')" class="btn-base py-3 px-4 rounded-xl border border-coffee-700 card-blur text-coffee-200 hover:text-white text-xs font-bold text-left transition">
-                                Mocha
+                            <button onclick="setBase('Mocha Artesanal', 75, 'Espresso, cacao mexicano auténtico y leche al vapor.')" class="btn-base py-3 px-4 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 hover:text-espresso text-xs font-bold text-left transition">
+                                Mocha Especial
                             </button>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-coffee-200 mb-3">2. Tipo de Leche</label>
+                        <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-3">2. Tipo de Leche</label>
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                            <button onclick="setMilk('Entera', 0)" class="btn-milk py-2 px-3 rounded-lg border border-amberGold bg-amberGold/15 text-white text-xs font-semibold text-center transition">Entera</button>
-                            <button onclick="setMilk('Deslactosada', 0)" class="btn-milk py-2 px-3 rounded-lg border border-coffee-700 text-coffee-200 text-xs font-semibold text-center transition">Deslactosada</button>
-                            <button onclick="setMilk('Avena Barista', 10)" class="btn-milk py-2 px-3 rounded-lg border border-coffee-700 text-coffee-200 text-xs font-semibold text-center transition">Avena (+$10)</button>
-                            <button onclick="setMilk('Almendra', 10)" class="btn-milk py-2 px-3 rounded-lg border border-coffee-700 text-coffee-200 text-xs font-semibold text-center transition">Almendra (+$10)</button>
+                            <button onclick="setMilk('Entera', 0)" class="btn-milk py-2 px-3 rounded-xl border-2 border-espresso bg-creamSoft text-espresso text-xs font-black text-center transition">Entera</button>
+                            <button onclick="setMilk('Deslactosada', 0)" class="btn-milk py-2 px-3 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 text-xs font-bold text-center transition">Deslactosada</button>
+                            <button onclick="setMilk('Avena Barista', 10)" class="btn-milk py-2 px-3 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 text-xs font-bold text-center transition">Avena (+$10)</button>
+                            <button onclick="setMilk('Almendra', 10)" class="btn-milk py-2 px-3 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 text-xs font-bold text-center transition">Almendra (+$10)</button>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-coffee-200 mb-3">3. Jarabe / Saborizante Artesanal</label>
+                        <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-3">3. Jarabes de Sabor</label>
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                            <button onclick="setSyrup('Sin Jarabe', 0)" class="btn-syrup py-2 px-3 rounded-lg border border-amberGold bg-amberGold/15 text-white text-xs font-semibold text-center transition">Ninguno</button>
-                            <button onclick="setSyrup('Vainilla Papantla', 8)" class="btn-syrup py-2 px-3 rounded-lg border border-coffee-700 text-coffee-200 text-xs font-semibold text-center transition">Vainilla (+$8)</button>
-                            <button onclick="setSyrup('Caramelo Salado', 8)" class="btn-syrup py-2 px-3 rounded-lg border border-coffee-700 text-coffee-200 text-xs font-semibold text-center transition">Caramelo (+$8)</button>
-                            <button onclick="setSyrup('Avellana Tostada', 8)" class="btn-syrup py-2 px-3 rounded-lg border border-coffee-700 text-coffee-200 text-xs font-semibold text-center transition">Avellana (+$8)</button>
+                            <button onclick="setSyrup('Sin Jarabe', 0)" class="btn-syrup py-2 px-3 rounded-xl border-2 border-espresso bg-creamSoft text-espresso text-xs font-black text-center transition">Ninguno</button>
+                            <button onclick="setSyrup('Vainilla Papantla', 8)" class="btn-syrup py-2 px-3 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 text-xs font-bold text-center transition">Vainilla (+$8)</button>
+                            <button onclick="setSyrup('Caramelo Tostado', 8)" class="btn-syrup py-2 px-3 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 text-xs font-bold text-center transition">Caramelo (+$8)</button>
+                            <button onclick="setSyrup('Avellana', 8)" class="btn-syrup py-2 px-3 rounded-xl border-2 border-espresso/15 bg-white text-espresso/70 text-xs font-bold text-center transition">Avellana (+$8)</button>
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between pt-2">
-                        <label class="text-xs font-bold uppercase tracking-wider text-coffee-200">Shot Extra de Espresso</label>
-                        <button id="btn-shot" onclick="toggleExtraShot()" class="px-4 py-1.5 rounded-lg border border-coffee-700 text-xs font-semibold text-coffee-200 hover:border-amberGold transition">
+                        <label class="text-xs font-black uppercase tracking-wider text-espresso">Shot Extra de Espresso</label>
+                        <button id="btn-shot" onclick="toggleExtraShot()" class="px-4 py-2 rounded-xl border-2 border-espresso/20 bg-creamBg text-xs font-black text-espresso hover:border-espresso transition">
                             + Agregar Shot (+$12)
                         </button>
                     </div>
                 </div>
 
-                <!-- Ticket Preview -->
-                <div class="lg:col-span-5 card-blur border border-amberGold/30 rounded-2xl p-6 sm:p-8 space-y-6 sticky top-28 shadow-2xl shadow-amberGold/5">
-                    <div class="flex justify-between items-center border-b border-coffee-700/50 pb-4">
-                        <span class="font-display font-bold text-lg text-white">Orden Botspresso</span>
-                        <span class="text-xs bg-emerald-500/10 text-emerald-400 font-mono border border-emerald-500/20 px-2 py-0.5 rounded">Listo para robot</span>
+                <!-- Ticket Previsto -->
+                <div class="lg:col-span-5 bg-white border-2 border-espresso rounded-3xl p-6 sm:p-8 space-y-6 sticky top-28 shadow-warm">
+                    <div class="flex justify-between items-center border-b-2 border-espresso/10 pb-4">
+                        <span class="font-black text-lg text-espresso">TICKET DE ORDEN</span>
+                        <span class="text-xs bg-emerald-50 text-emerald-800 font-mono font-bold border border-emerald-300 px-2.5 py-0.5 rounded-full">Receta Lista</span>
                     </div>
 
                     <div class="space-y-3 text-sm">
-                        <div class="flex justify-between">
-                            <span id="ticket-base" class="font-semibold text-white">Americano Clásico</span>
-                            <span id="ticket-base-price" class="text-coffee-200 font-mono">$55.00 MXN</span>
+                        <div class="flex justify-between font-bold">
+                            <span id="ticket-base" class="text-espresso">Americano Clásico</span>
+                            <span id="ticket-base-price" class="text-espresso font-mono">$55.00 MXN</span>
                         </div>
-                        <div class="flex justify-between text-xs text-coffee-200">
+                        <div class="flex justify-between text-xs text-espressoMuted font-medium">
                             <span>Leche: <span id="ticket-milk">Entera</span></span>
                             <span id="ticket-milk-price" class="font-mono">+$0.00</span>
                         </div>
-                        <div class="flex justify-between text-xs text-coffee-200">
+                        <div class="flex justify-between text-xs text-espressoMuted font-medium">
                             <span>Jarabe: <span id="ticket-syrup">Sin Jarabe</span></span>
                             <span id="ticket-syrup-price" class="font-mono">+$0.00</span>
                         </div>
-                        <div id="ticket-shot-row" class="hidden flex justify-between text-xs text-coffee-200">
+                        <div id="ticket-shot-row" class="hidden flex justify-between text-xs text-espressoMuted font-medium">
                             <span>Shot Extra Espresso</span>
                             <span class="font-mono">+$12.00</span>
                         </div>
                     </div>
 
-                    <div class="border-t border-coffee-700/50 pt-4 space-y-2">
-                        <div class="text-xs text-coffee-200 italic" id="ticket-notes">
-                            "Espresso doble extraído sobre agua purificada a 88°C."
+                    <div class="border-t-2 border-espresso/10 pt-4 space-y-2">
+                        <div class="text-xs text-espressoMuted italic" id="ticket-notes">
+                            "Espresso doble sobre agua caliente purificada."
                         </div>
                         <div class="flex justify-between items-baseline pt-2">
-                            <span class="text-xs uppercase font-bold tracking-wider text-coffee-200">Total Estimado</span>
-                            <span id="ticket-total" class="font-display text-3xl font-extrabold text-amberGold font-mono">$55.00 MXN</span>
+                            <span class="text-xs uppercase font-black tracking-wider text-espressoMuted">Total</span>
+                            <span id="ticket-total" class="text-3xl font-black text-espresso font-mono">$55.00 MXN</span>
                         </div>
                     </div>
 
-                    <button onclick="alert('¡Excelente elección! Puedes pedir esta combinación directamente en las pantallas de nuestros kioscos de AIFA y Patio Santa Fe.')" class="w-full bg-gradient-to-r from-amberGold to-amber-600 hover:from-amber-400 hover:to-amber-500 text-coffee-950 font-bold py-3.5 rounded-xl shadow-lg shadow-amberGold/20 uppercase tracking-wider text-xs transition">
+                    <a href="#kioscos" class="block w-full bg-espresso hover:bg-espressoLight text-creamBg font-black py-4 rounded-xl uppercase tracking-wider text-xs text-center transition shadow-warm">
                         Pedir en Kiosco Cercano
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: UBICACIONES DE KIOSCOS -->
-    <section id="ubicaciones" class="py-24 border-t border-coffee-700/30 bg-coffee-900/30">
+    <!-- LOCALIZADOR DE KIOSCOS -->
+    <section id="kioscos" class="py-24 border-t-2 border-espresso/10 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-bold text-amberGold tracking-widest uppercase">Red de Kioscos</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-bold">Dónde encontrar tu Botspresso</h2>
-                <p class="text-coffee-200 text-sm sm:text-base">
-                    Nuestras barras automatizadas operan continuamente en los puntos de mayor tránsito.
+                <span class="text-xs font-black text-accentCaramel tracking-widest uppercase">Ubicaciones</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-espresso">Nuestros Kioscos en Operación</h2>
+                <p class="text-espressoMuted text-sm sm:text-base">
+                    Puntos estratégicos para que nunca te falte un café de calidad mundial.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- AIFA -->
-                <div class="card-blur border border-coffee-700/60 hover:border-amberGold/50 rounded-2xl p-8 space-y-6 transition group">
+                <div class="bg-creamBg border-2 border-espresso rounded-3xl p-8 space-y-6 transition hover:shadow-warm">
                     <div class="flex justify-between items-start">
                         <div>
-                            <span class="text-[11px] font-mono text-amberGold uppercase">BOT-01 • Aeropuertos</span>
-                            <h3 class="font-display text-2xl font-bold text-white mt-1">AIFA Terminal Principal</h3>
-                            <p class="text-xs text-coffee-200 mt-1">Aeropuerto Internacional Felipe Ángeles</p>
+                            <span class="text-xs font-mono font-bold text-accentCaramel uppercase">BOT-01 • Aeropuerto</span>
+                            <h3 class="text-2xl font-black text-espresso mt-1">AIFA Terminal</h3>
+                            <p class="text-xs text-espressoMuted mt-0.5">Aeropuerto Internacional Felipe Ángeles</p>
                         </div>
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-300">
                             ● Operando 24/7
                         </span>
                     </div>
 
-                    <div class="space-y-2 text-xs text-coffee-200 border-t border-coffee-700/40 pt-4">
+                    <div class="space-y-2 text-xs font-semibold text-espresso border-t-2 border-espresso/10 pt-4">
                         <div class="flex justify-between">
-                            <span>Ubicación:</span>
-                            <span class="text-white font-medium">Sala de Espera Nacional / Salidas</span>
+                            <span class="text-espressoMuted">Ubicación:</span>
+                            <span>Sala de Espera Nacional / Salidas</span>
                         </div>
                         <div class="flex justify-between">
-                            <span>Tiempo de servicio:</span>
-                            <span class="text-emerald-400 font-medium">~50 seg por bebida</span>
+                            <span class="text-espressoMuted">Tiempo estimado:</span>
+                            <span class="text-emerald-700 font-bold">&lt; 1 minuto por café</span>
                         </div>
                         <div class="flex justify-between">
-                            <span>Métodos de Pago:</span>
-                            <span class="text-white font-medium">Tarjeta, Apple Pay, Contactless</span>
+                            <span class="text-espressoMuted">Pagos:</span>
+                            <span>Tarjetas, Apple Pay, Contactless</span>
                         </div>
                     </div>
 
-                    <a href="https://maps.google.com/?q=AIFA" target="_blank" class="inline-block w-full text-center text-xs font-bold uppercase tracking-wider py-3 rounded-xl border border-coffee-700 group-hover:border-amberGold group-hover:bg-amberGold group-hover:text-coffee-950 transition">
-                        Ver en Google Maps ↗
+                    <a href="https://maps.google.com/?q=AIFA" target="_blank" class="block w-full text-center text-xs font-black uppercase tracking-wider py-3.5 rounded-xl border-2 border-espresso bg-white hover:bg-espresso hover:text-creamBg transition">
+                        Ver Ubicación en Maps ↗
                     </a>
                 </div>
 
                 <!-- PATIO SANTA FE -->
-                <div class="card-blur border border-coffee-700/60 hover:border-amberGold/50 rounded-2xl p-8 space-y-6 transition group">
+                <div class="bg-creamBg border-2 border-espresso rounded-3xl p-8 space-y-6 transition hover:shadow-warm">
                     <div class="flex justify-between items-start">
                         <div>
-                            <span class="text-[11px] font-mono text-amberGold uppercase">BOT-02 • Centros Comerciales</span>
-                            <h3 class="font-display text-2xl font-bold text-white mt-1">Patio Santa Fe</h3>
-                            <p class="text-xs text-coffee-200 mt-1">Ciudad de México, CDMX</p>
+                            <span class="text-xs font-mono font-bold text-accentCaramel uppercase">BOT-02 • Centro Comercial</span>
+                            <h3 class="text-2xl font-black text-espresso mt-1">Patio Santa Fe</h3>
+                            <p class="text-xs text-espressoMuted mt-0.5">Santa Fe, Ciudad de México</p>
                         </div>
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                            ● Operando Hoy
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-300">
+                            ● Abierto Hoy
                         </span>
                     </div>
 
-                    <div class="space-y-2 text-xs text-coffee-200 border-t border-coffee-700/40 pt-4">
+                    <div class="space-y-2 text-xs font-semibold text-espresso border-t-2 border-espresso/10 pt-4">
                         <div class="flex justify-between">
-                            <span>Ubicación:</span>
-                            <span class="text-white font-medium">Planta Baja, Pasillo Central</span>
+                            <span class="text-espressoMuted">Ubicación:</span>
+                            <span>Planta Baja, Pasillo Central</span>
                         </div>
                         <div class="flex justify-between">
-                            <span>Horario:</span>
-                            <span class="text-white font-medium">Lun a Dom: 8:00 AM - 9:00 PM</span>
+                            <span class="text-espressoMuted">Horario:</span>
+                            <span>Lunes a Domingo: 8:00 AM - 9:00 PM</span>
                         </div>
                         <div class="flex justify-between">
-                            <span>Métodos de Pago:</span>
-                            <span class="text-white font-medium">Tarjeta, Apple Pay, Efectivo Kiosco</span>
+                            <span class="text-espressoMuted">Pagos:</span>
+                            <span>Tarjetas, Efectivo en Kiosco, Celular</span>
                         </div>
                     </div>
 
-                    <a href="https://maps.google.com/?q=Patio+Santa+Fe" target="_blank" class="inline-block w-full text-center text-xs font-bold uppercase tracking-wider py-3 rounded-xl border border-coffee-700 group-hover:border-amberGold group-hover:bg-amberGold group-hover:text-coffee-950 transition">
-                        Ver en Google Maps ↗
+                    <a href="https://maps.google.com/?q=Patio+Santa+Fe" target="_blank" class="block w-full text-center text-xs font-black uppercase tracking-wider py-3.5 rounded-xl border-2 border-espresso bg-white hover:bg-espresso hover:text-creamBg transition">
+                        Ver Ubicación en Maps ↗
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CALCULADORA B2B PARA CENTROS COMERCIALES Y AEROPUERTOS -->
-    <section id="alianzas" class="py-24 border-t border-coffee-700/30">
+    <!-- CALCULADORA DE NEGOCIO PARA INMUEBLES / B2B -->
+    <section id="plazas" class="py-24 border-t-2 border-espresso/10 bg-creamSoft/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-6 space-y-6">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-amberGold/30 bg-amberGold/10 text-amberGold text-xs font-semibold uppercase">
-                        <span>Para Administradores de Inmuebles</span>
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border-2 border-espresso/15 bg-white text-espresso text-xs font-black uppercase">
+                        <span>Alianzas Comerciales</span>
                     </div>
 
-                    <h2 class="font-display text-3xl sm:text-5xl font-bold leading-tight">
-                        Transforma 3 m² en un punto de alta rentabilidad
+                    <h2 class="text-3xl sm:text-5xl font-black text-espresso leading-tight">
+                        Instala un Kiosco Botspresso en tu Inmueble
                     </h2>
 
-                    <p class="text-coffee-200 text-sm sm:text-base leading-relaxed">
-                        Botspresso no requiere tomas complejas de gas ni grandes equipos de personal. Diseñado para aeropuertos, hospitales, universidades y malls que buscan maximizar el rendimiento por metro cuadrado.
+                    <p class="text-espressoMuted text-sm sm:text-base leading-relaxed">
+                        Rentabiliza solo 3 metros cuadrados en aeropuertos, hospitales, universidades o centros comerciales con una atracción innovadora y café de clase mundial.
                     </p>
 
-                    <div class="space-y-3 text-xs sm:text-sm text-coffee-100">
+                    <div class="space-y-3 text-xs sm:text-sm font-bold text-espresso">
                         <div class="flex items-center space-x-3">
-                            <span class="text-amberGold font-bold text-lg">✓</span>
-                            <span>Solo requiere conexión eléctrica estándar y toma de agua/garrafón.</span>
+                            <span class="text-accentCaramel font-black text-lg">✓</span>
+                            <span>Solo requiere toma eléctrica estándar y garrafones de agua purificada.</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <span class="text-amberGold font-bold text-lg">✓</span>
-                            <span>Modelo de renta fija o participación de ingresos por porcentaje.</span>
+                            <span class="text-accentCaramel font-black text-lg">✓</span>
+                            <span>Modelos de renta fija mensual o comisión variable sobre ventas netas.</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <span class="text-amberGold font-bold text-lg">✓</span>
-                            <span>Mantenimiento, abasto e insumos 100% gestionados por Botspresso.</span>
+                            <span class="text-accentCaramel font-black text-lg">✓</span>
+                            <span>Abasto, calibración y mantenimiento técnico 100% a cargo de Botspresso.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Calculadora ROI -->
-                <div class="lg:col-span-6 card-blur border border-coffee-700/60 rounded-3xl p-6 sm:p-8 space-y-6">
-                    <h3 class="font-display text-xl font-bold text-white flex items-center justify-between">
-                        <span>Simulador de Tráfico & Ventas</span>
-                        <span class="text-xs font-mono text-amberGold font-normal">Cálculo en MXN</span>
+                <!-- Calculadora de Tráfico y Rendimiento -->
+                <div class="lg:col-span-6 bg-white border-2 border-espresso rounded-3xl p-6 sm:p-8 space-y-6 shadow-warm">
+                    <h3 class="text-xl font-black text-espresso flex items-center justify-between">
+                        <span>Simulador de Ventas</span>
+                        <span class="text-xs font-mono text-accentCaramel font-bold">Valores Netos MXN</span>
                     </h3>
 
                     <!-- Slider -->
                     <div class="space-y-2">
-                        <div class="flex justify-between text-xs font-semibold">
-                            <span class="text-coffee-200">Tazas estimadas por día:</span>
-                            <span id="calc-cups-label" class="text-amberGold text-base font-bold font-mono">120 tazas</span>
+                        <div class="flex justify-between text-xs font-black">
+                            <span class="text-espressoMuted">Tazas estimadas por día:</span>
+                            <span id="calc-cups-label" class="text-espresso text-base font-mono">120 tazas</span>
                         </div>
-                        <input type="range" id="calc-cups" min="40" max="400" step="10" value="120" oninput="recalcularROI()" class="w-full accent-amberGold cursor-pointer">
-                        <div class="flex justify-between text-[10px] text-coffee-200 font-mono">
-                            <span>40/día (Flujo moderado)</span>
-                            <span>400/día (Alto tráfico)</span>
-                        </div>
-                    </div>
-
-                    <!-- Resultados Proyectados -->
-                    <div class="grid grid-cols-2 gap-4 border-t border-coffee-700/40 pt-4">
-                        <div class="p-3 bg-coffee-900/60 rounded-xl border border-coffee-700/40">
-                            <div class="text-[11px] text-coffee-200">Venta Mensual Estimada</div>
-                            <div id="calc-venta" class="font-display text-lg sm:text-xl font-bold text-white font-mono mt-0.5">$216,000</div>
-                        </div>
-                        <div class="p-3 bg-coffee-900/60 rounded-xl border border-coffee-700/40">
-                            <div class="text-[11px] text-coffee-200">Costo Insumos Variable</div>
-                            <div id="calc-costo" class="font-display text-lg sm:text-xl font-bold text-red-400 font-mono mt-0.5">-$43,452</div>
+                        <input type="range" id="calc-cups" min="40" max="400" step="10" value="120" oninput="recalcularROI()" class="w-full accent-espresso cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-espressoMuted font-mono">
+                            <span>40 tazas/día</span>
+                            <span>400 tazas/día</span>
                         </div>
                     </div>
 
-                    <div class="p-4 bg-amberGold/10 rounded-2xl border border-amberGold/30 flex justify-between items-center">
+                    <!-- Métricas -->
+                    <div class="grid grid-cols-2 gap-4 border-t-2 border-espresso/10 pt-4">
+                        <div class="p-3 bg-creamBg rounded-2xl border border-espresso/10">
+                            <div class="text-[11px] font-bold text-espressoMuted">Venta Mensual Neta</div>
+                            <div id="calc-venta" class="text-lg sm:text-xl font-black text-espresso font-mono mt-0.5">$216,000</div>
+                        </div>
+                        <div class="p-3 bg-creamBg rounded-2xl border border-espresso/10">
+                            <div class="text-[11px] font-bold text-espressoMuted">Costo Insumos ($12.07/taza)</div>
+                            <div id="calc-costo" class="text-lg sm:text-xl font-black text-red-600 font-mono mt-0.5">-$43,452</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-creamSoft rounded-2xl border-2 border-espresso/10 flex justify-between items-center">
                         <div>
-                            <div class="text-xs uppercase font-bold text-amberGold">Margen Operativo Bruto</div>
-                            <div class="text-[11px] text-coffee-200">Antes de renta y sueldos</div>
+                            <div class="text-xs uppercase font-black text-espresso">Margen Operativo Bruto</div>
+                            <div class="text-[11px] text-espressoMuted font-medium">Antes de renta y servicios</div>
                         </div>
-                        <div id="calc-margen" class="font-display text-2xl sm:text-3xl font-extrabold text-amberGold font-mono">
+                        <div id="calc-margen" class="text-2xl sm:text-3xl font-black text-accentCaramel font-mono">
                             $172,548
                         </div>
                     </div>
@@ -493,11 +477,11 @@
                     <!-- Formulario de Contacto -->
                     <form onsubmit="enviarContacto(event)" class="space-y-3 pt-2">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <input type="text" id="contacto-nombre" placeholder="Tu Nombre / Empresa" required class="bg-coffee-900/80 border border-coffee-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-coffee-200/50 focus:border-amberGold outline-none">
-                            <input type="email" id="contacto-email" placeholder="Correo de contacto" required class="bg-coffee-900/80 border border-coffee-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-coffee-200/50 focus:border-amberGold outline-none">
+                            <input type="text" id="contacto-nombre" placeholder="Nombre / Empresa" required class="bg-creamBg border-2 border-espresso/20 rounded-xl px-3.5 py-2.5 text-xs text-espresso font-medium focus:border-espresso outline-none">
+                            <input type="email" id="contacto-email" placeholder="Correo electrónico" required class="bg-creamBg border-2 border-espresso/20 rounded-xl px-3.5 py-2.5 text-xs text-espresso font-medium focus:border-espresso outline-none">
                         </div>
-                        <button type="submit" class="w-full bg-amberGold hover:bg-amber-400 text-coffee-950 font-bold py-3 rounded-xl uppercase tracking-wider text-xs transition shadow-lg shadow-amberGold/20">
-                            Solicitar Cotización de Espacio
+                        <button type="submit" class="w-full bg-espresso hover:bg-espressoLight text-creamBg font-black py-3.5 rounded-xl uppercase tracking-wider text-xs transition shadow-warm">
+                            Solicitar Información para mi Inmueble
                         </button>
                     </form>
                 </div>
@@ -507,23 +491,23 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 border-t border-coffee-700/30 card-blur">
+    <footer class="py-12 border-t-2 border-espresso/10 bg-creamBg">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
             <div class="flex items-center space-x-3">
-                <span class="font-display text-xl font-bold text-white tracking-tight">BOTSPRESSO</span>
-                <span class="text-xs text-coffee-200 border-l border-coffee-700 pl-3">Robotic Specialty Coffee Systems</span>
+                <img src="/logo.png" alt="Botspresso Logo" class="h-8 w-auto object-contain" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/simoncohenestilodf/botspresso-web/main/logo.png';">
+                <span class="text-lg font-black text-espresso">Botspresso</span>
+                <span class="text-xs text-espressoMuted border-l-2 border-espresso/20 pl-3">Robotic Specialty Coffee</span>
             </div>
-            <div class="text-xs text-coffee-200 text-center sm:text-right">
+            <div class="text-xs text-espressoMuted text-center sm:text-right font-medium">
                 © 2026 Botspresso Inc. Todos los derechos reservados.<br>
-                Operaciones activas en Ciudad de México y Estado de México.
+                Operando en Ciudad de México y Área Metropolitana.
             </div>
         </div>
     </footer>
 
-    <!-- LÓGICA INTERACTIVA JAVASCRIPT -->
+    <!-- LÓGICA INTERACTIVA -->
     <script>
-        // Simulador Menú
-        let baseActual = 'Americano';
+        let baseActual = 'Americano Clásico';
         let precioBase = 55;
         let lecheActual = 'Entera';
         let precioLeche = 0;
@@ -539,11 +523,11 @@
             document.getElementById('ticket-notes').innerText = `"${nota}"`;
 
             document.querySelectorAll('.btn-base').forEach(b => {
-                b.classList.remove('border-amberGold', 'bg-amberGold/15');
-                b.classList.add('border-coffee-700');
+                b.classList.remove('border-espresso', 'bg-creamSoft', 'text-espresso', 'font-black');
+                b.classList.add('border-espresso/15', 'bg-white', 'text-espresso/70', 'font-bold');
             });
-            event.currentTarget.classList.add('border-amberGold', 'bg-amberGold/15');
-            event.currentTarget.classList.remove('border-coffee-700');
+            event.currentTarget.classList.add('border-espresso', 'bg-creamSoft', 'text-espresso', 'font-black');
+            event.currentTarget.classList.remove('border-espresso/15', 'bg-white', 'text-espresso/70', 'font-bold');
 
             actualizarTotalTicket();
         }
@@ -555,11 +539,11 @@
             document.getElementById('ticket-milk-price').innerText = `+$${precio.toFixed(2)}`;
 
             document.querySelectorAll('.btn-milk').forEach(b => {
-                b.classList.remove('border-amberGold', 'bg-amberGold/15');
-                b.classList.add('border-coffee-700');
+                b.classList.remove('border-espresso', 'bg-creamSoft', 'text-espresso', 'font-black');
+                b.classList.add('border-espresso/15', 'bg-white', 'text-espresso/70', 'font-bold');
             });
-            event.currentTarget.classList.add('border-amberGold', 'bg-amberGold/15');
-            event.currentTarget.classList.remove('border-coffee-700');
+            event.currentTarget.classList.add('border-espresso', 'bg-creamSoft', 'text-espresso', 'font-black');
+            event.currentTarget.classList.remove('border-espresso/15', 'bg-white', 'text-espresso/70', 'font-bold');
 
             actualizarTotalTicket();
         }
@@ -571,11 +555,11 @@
             document.getElementById('ticket-syrup-price').innerText = `+$${precio.toFixed(2)}`;
 
             document.querySelectorAll('.btn-syrup').forEach(b => {
-                b.classList.remove('border-amberGold', 'bg-amberGold/15');
-                b.classList.add('border-coffee-700');
+                b.classList.remove('border-espresso', 'bg-creamSoft', 'text-espresso', 'font-black');
+                b.classList.add('border-espresso/15', 'bg-white', 'text-espresso/70', 'font-bold');
             });
-            event.currentTarget.classList.add('border-amberGold', 'bg-amberGold/15');
-            event.currentTarget.classList.remove('border-coffee-700');
+            event.currentTarget.classList.add('border-espresso', 'bg-creamSoft', 'text-espresso', 'font-black');
+            event.currentTarget.classList.remove('border-espresso/15', 'bg-white', 'text-espresso/70', 'font-bold');
 
             actualizarTotalTicket();
         }
@@ -586,10 +570,10 @@
             const row = document.getElementById('ticket-shot-row');
 
             if (tieneExtraShot) {
-                btn.classList.add('border-amberGold', 'bg-amberGold/15', 'text-white');
+                btn.classList.add('border-espresso', 'bg-creamSoft');
                 row.classList.remove('hidden');
             } else {
-                btn.classList.remove('border-amberGold', 'bg-amberGold/15', 'text-white');
+                btn.classList.remove('border-espresso', 'bg-creamSoft');
                 row.classList.add('hidden');
             }
             actualizarTotalTicket();
@@ -601,18 +585,17 @@
             document.getElementById('ticket-total').innerText = `$${total.toFixed(2)} MXN`;
         }
 
-        // Calculadora B2B
         function recalcularROI() {
             const cups = parseInt(document.getElementById('calc-cups').value);
             document.getElementById('calc-cups-label').innerText = `${cups} tazas`;
 
             const diasMes = 30;
-            const ticketPromedio = 60; // Precio promedio por taza
-            const costoVariableNetoPorTaza = 12.07; // Costo exacto parametrizado de insumos
+            const ticketPromedio = 60;
+            const costoVariableNeto = 12.07; // Parámetro real de costo
 
             const totalTazasMes = cups * diasMes;
             const ventaMensual = totalTazasMes * ticketPromedio;
-            const costoInsumos = totalTazasMes * costoVariableNetoPorTaza;
+            const costoInsumos = totalTazasMes * costoVariableNeto;
             const margenBruto = ventaMensual - costoInsumos;
 
             document.getElementById('calc-venta').innerText = `$${Math.round(ventaMensual).toLocaleString('es-MX')}`;
@@ -623,7 +606,7 @@
         function enviarContacto(e) {
             e.preventDefault();
             const nombre = document.getElementById('contacto-nombre').value;
-            alert(`¡Gracias, ${nombre}! Hemos recibido tu interés. Un asesor comercial de Botspresso te contactará en breve.`);
+            alert(`¡Gracias, ${nombre}! Nos pondremos en contacto contigo a la brevedad.`);
             e.target.reset();
         }
     </script>
