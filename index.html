@@ -457,7 +457,7 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE CONTACTO (CONECTADO A FORMSPREE) -->
+    <!-- FORMULARIO DE CONTACTO (CORREO 100% OCULTO) -->
     <section id="contacto" class="py-24 border-t-2 border-espresso/10 bg-creamSoft/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -477,8 +477,8 @@
 
                     <div class="space-y-4 pt-2">
                         <div class="flex items-center space-x-3 text-sm font-bold text-espresso">
-                            <span class="w-8 h-8 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-sm">✉️</span>
-                            <span>simon.cohen@botspresso.com.mx</span>
+                            <span class="w-8 h-8 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-sm">💬</span>
+                            <span>Atención Directa y Cotizaciones Comerciales</span>
                         </div>
                         <div class="flex items-center space-x-3 text-sm font-bold text-espresso">
                             <span class="w-8 h-8 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-sm">📍</span>
@@ -501,7 +501,6 @@
                     <h3 class="text-2xl font-black text-espresso mb-2">Solicitar Propuesta Comercial</h3>
                     <p class="text-xs text-espressoMuted mb-6 font-medium">Completa el formulario y te enviaremos la ficha técnica y financiera a tu correo.</p>
 
-                    <!-- Formulario conectado a Formspree -->
                     <form id="contact-form" action="https://formspree.io/f/mbggovay" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-4">
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -542,8 +541,9 @@
                             <textarea name="mensaje" id="form-mensaje" rows="3" placeholder="Cuéntanos sobre tu espacio, afluencia estimada o cualquier duda específica..." class="w-full bg-creamBg border-2 border-espresso/20 rounded-xl px-4 py-3 text-xs text-espresso font-semibold focus:border-espresso outline-none resize-none"></textarea>
                         </div>
 
+                        <!-- Botón limpio sin mostrar correo -->
                         <button type="submit" id="btn-submit" class="w-full bg-espresso hover:bg-espressoLight text-creamBg font-black py-4 rounded-xl uppercase tracking-wider text-xs transition-all shadow-warm hover:scale-[1.01] active:scale-95">
-                            Enviar Solicitud a simon.cohen@botspresso.com.mx
+                            Enviar Solicitud
                         </button>
 
                         <div id="form-status" class="hidden text-center p-3 rounded-xl text-xs font-bold mt-2"></div>
@@ -554,7 +554,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (SIN CORREO VISIBLE) -->
     <footer class="py-12 border-t-2 border-espresso/10 bg-creamBg">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
             <div class="flex items-center space-x-3">
@@ -563,7 +563,7 @@
                 <span class="text-xs text-espressoMuted border-l-2 border-espresso/20 pl-3">Robotic Specialty Coffee</span>
             </div>
             <div class="text-xs text-espressoMuted text-center sm:text-right font-medium">
-                Contacto directo: <a href="mailto:simon.cohen@botspresso.com.mx" class="text-espresso font-bold underline">simon.cohen@botspresso.com.mx</a><br>
+                Atención comercial exclusiva vía formulario web.<br>
                 © 2026 Botspresso Inc. Todos los derechos reservados.
             </div>
         </div>
@@ -571,7 +571,7 @@
 
     <!-- LÓGICA JAVASCRIPT -->
     <script>
-        // Manejo del formulario de contacto conectado a Formspree
+        // Manejo del formulario de contacto conectado a Formspree sin exponer datos personales
         async function handleFormSubmit(event) {
             event.preventDefault();
             const form = event.target;
@@ -592,7 +592,7 @@
 
                 if (response.ok) {
                     status.className = "text-center p-3.5 rounded-xl text-xs font-bold mt-2 bg-emerald-100 text-emerald-800 border-2 border-emerald-300";
-                    status.innerText = `¡Gracias, ${nombre}! Tu solicitud ha sido enviada con éxito. Simon Cohen te contactará en breve al correo ${email}.`;
+                    status.innerText = `¡Gracias, ${nombre}! Tu solicitud ha sido recibida con éxito. Un representante comercial te contactará a ${email}.`;
                     status.classList.remove('hidden');
                     form.reset();
                 } else {
@@ -602,7 +602,7 @@
                         status.innerText = data.errors.map(error => error.message).join(", ");
                     } else {
                         status.className = "text-center p-3 rounded-xl text-xs font-bold mt-2 bg-amber-100 text-amber-800 border border-amber-300";
-                        status.innerText = "Hubo un detalle al enviar el formulario. Por favor contáctanos directamente a simon.cohen@botspresso.com.mx";
+                        status.innerText = "Hubo un detalle al enviar el formulario. Por favor verifica tus datos e inténtalo nuevamente.";
                     }
                     status.classList.remove('hidden');
                 }
@@ -612,7 +612,7 @@
                 status.classList.remove('hidden');
             } finally {
                 btn.disabled = false;
-                btn.innerText = "Enviar Solicitud a simon.cohen@botspresso.com.mx";
+                btn.innerText = "Enviar Solicitud";
             }
         }
 
