@@ -8,7 +8,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts con la tipografía oficial del logo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
 </head>
 <body class="bg-creamBg text-espresso font-sans antialiased selection:bg-espresso selection:text-creamBg">
 
-    <!-- NAVEGACIÓN -->
+    <!-- BARRA DE NAVEGACIÓN -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-creamBg/95 backdrop-blur-md border-b-2 border-espresso/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             
@@ -59,17 +59,17 @@
             <div class="hidden md:flex items-center space-x-8 text-sm font-bold text-espresso/80">
                 <a href="#experiencia" class="hover:text-accentCaramel transition">El Café</a>
                 <a href="#video-demo" class="hover:text-accentCaramel transition">En Vivo</a>
-                <a href="#menu" class="hover:text-accentCaramel transition">Menú & Recetas</a>
+                <a href="#menu" class="hover:text-accentCaramel transition">Menú</a>
                 <a href="#kioscos" class="hover:text-accentCaramel transition">Ubicaciones</a>
-                <a href="#plazas" class="hover:text-accentCaramel transition">Instalar en tu Plaza</a>
+                <a href="#contacto" class="hover:text-accentCaramel transition">Franquicias & Máquinas</a>
             </div>
 
             <div class="flex items-center space-x-3">
                 <a href="https://botpresso-pnl.onrender.com" target="_blank" class="hidden sm:inline-block text-xs font-bold px-3 py-2 rounded-xl border-2 border-espresso/20 text-espresso hover:border-espresso transition">
                     Portal P&L ↗
                 </a>
-                <a href="#plazas" class="bg-espresso hover:bg-espressoLight text-creamBg font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-warm transition-all hover:scale-105 active:scale-95">
-                    Cotizar Espacio
+                <a href="#contacto" class="bg-espresso hover:bg-espressoLight text-creamBg font-black text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-warm transition-all hover:scale-105 active:scale-95">
+                    Contacto Directo
                 </a>
             </div>
         </div>
@@ -92,22 +92,22 @@
                     </h1>
 
                     <p class="text-espressoMuted text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                        Unimos los mejores granos de altura mexicanos con brazos robóticos de alta tecnología. Cero margen de error humano: temperatura constante, molienda perfecta y servido en menos de 50 segundos.
+                        Unimos los mejores granos de altura mexicanos con brazos robóticos de alta tecnología. Cero margen de error humano: temperatura constante, molienda calibrada y extracción lista en 45 segundos.
                     </p>
 
                     <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#menu" class="w-full sm:w-auto bg-espresso hover:bg-espressoLight text-creamBg font-black px-8 py-4 rounded-xl shadow-warm transition text-center text-sm uppercase tracking-wider">
-                            Explorar Menú
+                        <a href="#contacto" class="w-full sm:w-auto bg-espresso hover:bg-espressoLight text-creamBg font-black px-8 py-4 rounded-xl shadow-warm transition text-center text-sm uppercase tracking-wider">
+                            Adquirir o Franquiciar
                         </a>
                         <a href="#video-demo" class="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-espresso bg-white hover:bg-creamSoft text-sm font-black text-espresso transition text-center flex items-center justify-center gap-2">
-                            <span>Ver Robot en Acción</span> 🎥
+                            <span>Ver en Acción</span> 🎥
                         </a>
                     </div>
 
                     <div class="grid grid-cols-3 gap-6 pt-8 border-t-2 border-espresso/10 max-w-lg mx-auto lg:mx-0">
                         <div>
                             <div class="text-3xl sm:text-4xl font-black text-espresso">45s</div>
-                            <div class="text-xs text-espressoMuted font-bold mt-1">Extracción rápida</div>
+                            <div class="text-xs text-espressoMuted font-bold mt-1">Extracción express</div>
                         </div>
                         <div>
                             <div class="text-3xl sm:text-4xl font-black text-accentCaramel">100%</div>
@@ -120,7 +120,7 @@
                     </div>
                 </div>
 
-                <!-- VIDEO HERO (16:9 Sin Sonido) -->
+                <!-- VIDEO HERO -->
                 <div class="lg:col-span-6 flex justify-center">
                     <div class="w-full bg-white border-2 border-espresso rounded-3xl p-4 sm:p-6 shadow-warm shadow-warm-hover transition duration-300">
                         <div class="flex items-center justify-between border-b-2 border-espresso/10 pb-3 mb-4">
@@ -133,11 +133,9 @@
                             </span>
                         </div>
 
-                        <!-- Reproductor 16:9 -->
                         <div class="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-espresso bg-espresso">
                             <video id="hero-video" autoplay loop muted playsinline class="w-full h-full object-cover">
                                 <source src="/video-horizontal.mp4" type="video/mp4">
-                                <!-- En caso de no cargarse el video local, muestra respaldo gráfico -->
                                 <img src="/logo.png" alt="Botspresso" class="w-full h-full object-contain p-8 bg-creamBg">
                             </video>
                             <div class="absolute bottom-3 left-3 bg-espresso/80 backdrop-blur-sm text-creamBg text-[10px] font-bold px-2.5 py-1 rounded-md">
@@ -146,7 +144,7 @@
                         </div>
 
                         <div class="mt-3 flex justify-between items-center text-xs font-bold text-espresso px-1">
-                            <span class="text-espressoMuted font-medium">Ubicación mostrada:</span>
+                            <span class="text-espressoMuted font-medium">Ubicación:</span>
                             <span>Kiosco Aeropuerto AIFA</span>
                         </div>
                     </div>
@@ -156,42 +154,36 @@
         </div>
     </header>
 
-    <!-- SECCIÓN INTERACTIVA: VIDEO VERTICAL (REDES SOCIALES CON AUDIO) -->
+    <!-- VIDEO VERTICAL CON AUDIO -->
     <section id="video-demo" class="py-24 border-t-2 border-espresso/10 bg-creamSoft/60">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Teléfono / Marco Vertical 9:16 -->
                 <div class="lg:col-span-5 flex justify-center order-2 lg:order-1">
                     <div class="relative w-full max-w-[320px] bg-white border-4 border-espresso rounded-[40px] p-3 shadow-2xl">
                         
-                        <!-- Muesca / Bocina de teléfono -->
                         <div class="w-24 h-4 bg-espresso mx-auto rounded-full mb-3 flex items-center justify-center">
                             <div class="w-8 h-1 bg-espressoLight rounded-full"></div>
                         </div>
 
-                        <!-- Video 9:16 -->
                         <div class="relative aspect-[9/16] rounded-[28px] overflow-hidden border-2 border-espresso bg-espresso">
                             <video id="reel-video" loop playsinline muted class="w-full h-full object-cover">
                                 <source src="/video-vertical.mp4" type="video/mp4">
                             </video>
 
-                            <!-- Botón de Audio y Play Flotante -->
                             <button id="btn-audio-toggle" onclick="toggleAudioReel()" class="absolute bottom-4 right-4 bg-espresso/90 hover:bg-espresso text-creamBg px-3.5 py-2 rounded-xl text-xs font-black shadow-lg flex items-center gap-2 border border-creamBg/20 transition-transform active:scale-95">
                                 <span id="audio-icon">🔇</span>
                                 <span id="audio-text">Activar Audio</span>
                             </button>
                         </div>
 
-                        <!-- Botón home decorativo -->
                         <div class="w-16 h-1 bg-espresso/30 mx-auto rounded-full mt-3"></div>
                     </div>
                 </div>
 
-                <!-- Explicación al lado del video -->
                 <div class="lg:col-span-7 space-y-6 order-1 lg:order-2 text-center lg:text-left">
                     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border-2 border-espresso/15 bg-white text-espresso text-xs font-black uppercase">
-                        <span>Experiencia Real</span>
+                        <span>Experiencia en Acción</span>
                     </div>
 
                     <h2 class="text-3xl sm:text-5xl font-black text-espresso leading-tight">
@@ -199,29 +191,29 @@
                     </h2>
 
                     <p class="text-espressoMuted text-base sm:text-lg leading-relaxed">
-                        Observa cómo interactúan nuestros clientes en tiempo real. Desde la selección en pantalla táctil hasta el vertido aromático con microespuma artesanal.
+                        Selecciona en pantalla táctil, paga sin contacto y recoge en menos de un minuto. El brazo robótico ejecuta la compactación perfecta a 20 kg y prepara microespuma artesanal.
                     </p>
 
                     <div class="space-y-4 text-sm font-bold text-espresso">
                         <div class="flex items-start space-x-3 text-left">
                             <span class="w-7 h-7 rounded-lg bg-espresso text-creamBg flex items-center justify-center shrink-0 text-xs font-black">1</span>
                             <div>
-                                <span class="block">Selección táctil en segundos</span>
-                                <span class="text-xs text-espressoMuted font-medium">Personaliza tipo de leche, tueste y temperatura en la interfaz del módulo.</span>
+                                <span class="block">Selección táctil rápida</span>
+                                <span class="text-xs text-espressoMuted font-medium">Personaliza recetas, tipo de leche y jarabes en segundos.</span>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3 text-left">
                             <span class="w-7 h-7 rounded-lg bg-espresso text-creamBg flex items-center justify-center shrink-0 text-xs font-black">2</span>
                             <div>
-                                <span class="block">Extracción robótica con calibración constante</span>
-                                <span class="text-xs text-espressoMuted font-medium">El brazo robótico compacta a la presión ideal de 20 kg y extrae a 9 bares continuos.</span>
+                                <span class="block">Extracción constante de 9 bares</span>
+                                <span class="text-xs text-espressoMuted font-medium">Control de temperatura a 92°C y crema balanceada.</span>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3 text-left">
                             <span class="w-7 h-7 rounded-lg bg-espresso text-creamBg flex items-center justify-center shrink-0 text-xs font-black">3</span>
                             <div>
-                                <span class="block">Entrega hermética y limpia</span>
-                                <span class="text-xs text-espressoMuted font-medium">Tu bebida lista para recoger sin contacto humano ni manipulación externa.</span>
+                                <span class="block">Entrega autónoma y limpia</span>
+                                <span class="text-xs text-espressoMuted font-medium">Tu bebida lista al momento sin manipulación externa.</span>
                             </div>
                         </div>
                     </div>
@@ -238,7 +230,7 @@
                 <span class="text-xs font-black text-accentCaramel tracking-widest uppercase">Estándar Botspresso</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-espresso">El balance perfecto entre arte y robótica</h2>
                 <p class="text-espressoMuted text-sm sm:text-base leading-relaxed">
-                    Un barista tradicional puede variar la receta por cansancio; nuestro robot mantiene el mismo estándar copa tras copa.
+                    Un barista tradicional puede variar la técnica por fatiga; nuestro robot asegura la misma extracción exacta taza tras taza.
                 </p>
             </div>
 
@@ -259,7 +251,7 @@
                     </div>
                     <h3 class="text-xl font-black text-espresso">Origen Chiapas & Veracruz</h3>
                     <p class="text-espressoMuted text-sm leading-relaxed">
-                        100% arábica de estricta altura. Tueste medio con notas a chocolate amargo, frutos secos y acaramelado natural.
+                        100% arábica de estricta altura. Tueste medio fresco con notas a chocolate amargo, avellana y acaramelado natural.
                     </p>
                 </div>
 
@@ -269,7 +261,7 @@
                     </div>
                     <h3 class="text-xl font-black text-espresso">Sin Filas Ni Esperas</h3>
                     <p class="text-espressoMuted text-sm leading-relaxed">
-                        Pide en segundos desde la pantalla interactiva o tu celular y recoge tu bebida al instante. Diseñado para personas con prisa.
+                        Pide en segundos desde la pantalla interactiva o tu celular y recoge tu bebida al instante. Diseñado para alto tráfico.
                     </p>
                 </div>
             </div>
@@ -377,7 +369,7 @@
                     </div>
 
                     <a href="#kioscos" class="block w-full bg-espresso hover:bg-espressoLight text-creamBg font-black py-4 rounded-xl uppercase tracking-wider text-xs text-center transition shadow-warm">
-                        Pedir en Kiosco Cercano
+                        Probar en Kiosco
                     </a>
                 </div>
             </div>
@@ -391,7 +383,7 @@
                 <span class="text-xs font-black text-accentCaramel tracking-widest uppercase">Ubicaciones</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-espresso">Nuestros Kioscos en Operación</h2>
                 <p class="text-espressoMuted text-sm sm:text-base">
-                    Puntos estratégicos para disfrutar de tu café favorito.
+                    Puntos de servicio activos para degustar el café de Botspresso.
                 </p>
             </div>
 
@@ -453,7 +445,7 @@
                         </div>
                         <div class="flex justify-between">
                             <span class="text-espressoMuted">Pagos:</span>
-                            <span>Tarjetas, Efectivo en Kiosco, Celular</span>
+                            <span>Tarjetas, Efectivo en Kiosco, Contactless</span>
                         </div>
                     </div>
 
@@ -465,87 +457,96 @@
         </div>
     </section>
 
-    <!-- CALCULADORA DE NEGOCIO PARA INMUEBLES / B2B -->
-    <section id="plazas" class="py-24 border-t-2 border-espresso/10 bg-creamSoft/50">
+    <!-- FORMULARIO DE CONTACTO (CONECTADO A FORMSPREE) -->
+    <section id="contacto" class="py-24 border-t-2 border-espresso/10 bg-creamSoft/50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 
-                <div class="lg:col-span-6 space-y-6">
+                <div class="lg:col-span-5 space-y-6">
                     <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border-2 border-espresso/15 bg-white text-espresso text-xs font-black uppercase">
-                        <span>Alianzas Comerciales</span>
+                        <span>Oportunidades de Negocio</span>
                     </div>
 
                     <h2 class="text-3xl sm:text-5xl font-black text-espresso leading-tight">
-                        Instala un Kiosco Botspresso en tu Inmueble
+                        Lleva Botspresso a tu Ciudad o Empresa
                     </h2>
 
                     <p class="text-espressoMuted text-sm sm:text-base leading-relaxed">
-                        Rentabiliza solo 3 metros cuadrados en aeropuertos, hospitales, universidades o centros comerciales con café de especialidad automatizado.
+                        Desarrollamos modelos de inversión llave en mano. Ya sea para instalar un kiosco en tu centro comercial, adquirir unidades para corporativos u operar una franquicia regional.
                     </p>
 
-                    <div class="space-y-3 text-xs sm:text-sm font-bold text-espresso">
-                        <div class="flex items-center space-x-3">
-                            <span class="text-accentCaramel font-black text-lg">✓</span>
-                            <span>Solo requiere toma eléctrica estándar y garrafones de agua purificada.</span>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center space-x-3 text-sm font-bold text-espresso">
+                            <span class="w-8 h-8 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-sm">✉️</span>
+                            <span>simon.cohen@botspresso.com.mx</span>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <span class="text-accentCaramel font-black text-lg">✓</span>
-                            <span>Modelos de renta fija mensual o comisión variable sobre ventas netas.</span>
+                        <div class="flex items-center space-x-3 text-sm font-bold text-espresso">
+                            <span class="w-8 h-8 rounded-xl bg-white border-2 border-espresso flex items-center justify-center text-sm">📍</span>
+                            <span>Ciudad de México y Cobertura Nacional</span>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <span class="text-accentCaramel font-black text-lg">✓</span>
-                            <span>Abasto, calibración y mantenimiento técnico 100% a cargo de Botspresso.</span>
-                        </div>
+                    </div>
+
+                    <div class="p-6 bg-white border-2 border-espresso rounded-3xl space-y-3 shadow-warm">
+                        <div class="text-xs font-black uppercase tracking-wider text-accentCaramel">Modelos Disponibles</div>
+                        <ul class="text-xs space-y-2 text-espresso font-semibold">
+                            <li>• <strong>Venta Directa de Módulos:</strong> Hardware y software listos para operar.</li>
+                            <li>• <strong>Alianzas de Espacio:</strong> Renta fija o comisión para plazas y aeropuertos.</li>
+                            <li>• <strong>Franquicias Territoriales:</strong> Operación exclusiva por zona o estado.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="lg:col-span-6 bg-white border-2 border-espresso rounded-3xl p-6 sm:p-8 space-y-6 shadow-warm">
-                    <h3 class="text-xl font-black text-espresso flex items-center justify-between">
-                        <span>Simulador de Ventas</span>
-                        <span class="text-xs font-mono text-accentCaramel font-bold">Valores Netos MXN</span>
-                    </h3>
+                <!-- Formulario -->
+                <div class="lg:col-span-7 bg-white border-2 border-espresso rounded-3xl p-8 sm:p-10 shadow-warm">
+                    <h3 class="text-2xl font-black text-espresso mb-2">Solicitar Propuesta Comercial</h3>
+                    <p class="text-xs text-espressoMuted mb-6 font-medium">Completa el formulario y te enviaremos la ficha técnica y financiera a tu correo.</p>
 
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-xs font-black">
-                            <span class="text-espressoMuted">Tazas estimadas por día:</span>
-                            <span id="calc-cups-label" class="text-espresso text-base font-mono">120 tazas</span>
+                    <!-- Formulario conectado a Formspree -->
+                    <form id="contact-form" action="https://formspree.io/f/mbggovay" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-1">Tu Nombre Completo *</label>
+                                <input type="text" name="nombre" id="form-nombre" required placeholder="Ej. Carlos Mendoza" class="w-full bg-creamBg border-2 border-espresso/20 rounded-xl px-4 py-3 text-xs text-espresso font-semibold focus:border-espresso outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-1">Correo Electrónico *</label>
+                                <input type="email" name="email" id="form-email" required placeholder="tu@empresa.com" class="w-full bg-creamBg border-2 border-espresso/20 rounded-xl px-4 py-3 text-xs text-espresso font-semibold focus:border-espresso outline-none">
+                            </div>
                         </div>
-                        <input type="range" id="calc-cups" min="40" max="400" step="10" value="120" oninput="recalcularROI()" class="w-full accent-espresso cursor-pointer">
-                        <div class="flex justify-between text-[11px] text-espressoMuted font-mono">
-                            <span>40 tazas/día</span>
-                            <span>400 tazas/día</span>
-                        </div>
-                    </div>
 
-                    <div class="grid grid-cols-2 gap-4 border-t-2 border-espresso/10 pt-4">
-                        <div class="p-3 bg-creamBg rounded-2xl border border-espresso/10">
-                            <div class="text-[11px] font-bold text-espressoMuted">Venta Mensual Neta</div>
-                            <div id="calc-venta" class="text-lg sm:text-xl font-black text-espresso font-mono mt-0.5">$216,000</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-1">Teléfono / WhatsApp *</label>
+                                <input type="tel" name="telefono" id="form-telefono" required placeholder="+52 55 ..." class="w-full bg-creamBg border-2 border-espresso/20 rounded-xl px-4 py-3 text-xs text-espresso font-semibold focus:border-espresso outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-1">Motivo de Interés *</label>
+                                <select name="interes" id="form-interes" class="w-full bg-creamBg border-2 border-espresso/20 rounded-xl px-4 py-3 text-xs text-espresso font-bold focus:border-espresso outline-none">
+                                    <option value="Comprar Máquina Robot">Adquirir Máquina / Kiosco</option>
+                                    <option value="Franquicia Botspresso">Información de Franquicia</option>
+                                    <option value="Instalar en Centro Comercial / Aeropuerto">Instalar en Centro Comercial o Inmueble</option>
+                                    <option value="Corporativo / Hospital / Universidad">Servicio para Corporativo / Empresa</option>
+                                    <option value="Otro">Otro motivo</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="p-3 bg-creamBg rounded-2xl border border-espresso/10">
-                            <div class="text-[11px] font-bold text-espressoMuted">Costo Insumos ($12.07/taza)</div>
-                            <div id="calc-costo" class="text-lg sm:text-xl font-black text-red-600 font-mono mt-0.5">-$43,452</div>
-                        </div>
-                    </div>
 
-                    <div class="p-4 bg-creamSoft rounded-2xl border-2 border-espresso/10 flex justify-between items-center">
                         <div>
-                            <div class="text-xs uppercase font-black text-espresso">Margen Operativo Bruto</div>
-                            <div class="text-[11px] text-espressoMuted font-medium">Antes de renta y servicios</div>
+                            <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-1">Ciudad / Ubicación del Proyecto</label>
+                            <input type="text" name="ubicacion" id="form-ubicacion" placeholder="Ej. Monterrey, N.L. / Plaza Andares Guadalajara" class="w-full bg-creamBg border-2 border-espresso/20 rounded-xl px-4 py-3 text-xs text-espresso font-semibold focus:border-espresso outline-none">
                         </div>
-                        <div id="calc-margen" class="text-2xl sm:text-3xl font-black text-accentCaramel font-mono">
-                            $172,548
-                        </div>
-                    </div>
 
-                    <form onsubmit="enviarContacto(event)" class="space-y-3 pt-2">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <input type="text" id="contacto-nombre" placeholder="Nombre / Empresa" required class="bg-creamBg border-2 border-espresso/20 rounded-xl px-3.5 py-2.5 text-xs text-espresso font-medium focus:border-espresso outline-none">
-                            <input type="email" id="contacto-email" placeholder="Correo electrónico" required class="bg-creamBg border-2 border-espresso/20 rounded-xl px-3.5 py-2.5 text-xs text-espresso font-medium focus:border-espresso outline-none">
+                        <div>
+                            <label class="block text-xs font-black uppercase tracking-wider text-espresso mb-1">Mensaje o Detalles Adicionales</label>
+                            <textarea name="mensaje" id="form-mensaje" rows="3" placeholder="Cuéntanos sobre tu espacio, afluencia estimada o cualquier duda específica..." class="w-full bg-creamBg border-2 border-espresso/20 rounded-xl px-4 py-3 text-xs text-espresso font-semibold focus:border-espresso outline-none resize-none"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-espresso hover:bg-espressoLight text-creamBg font-black py-3.5 rounded-xl uppercase tracking-wider text-xs transition shadow-warm">
-                            Solicitar Información para mi Inmueble
+
+                        <button type="submit" id="btn-submit" class="w-full bg-espresso hover:bg-espressoLight text-creamBg font-black py-4 rounded-xl uppercase tracking-wider text-xs transition-all shadow-warm hover:scale-[1.01] active:scale-95">
+                            Enviar Solicitud a simon.cohen@botspresso.com.mx
                         </button>
+
+                        <div id="form-status" class="hidden text-center p-3 rounded-xl text-xs font-bold mt-2"></div>
                     </form>
                 </div>
 
@@ -562,14 +563,59 @@
                 <span class="text-xs text-espressoMuted border-l-2 border-espresso/20 pl-3">Robotic Specialty Coffee</span>
             </div>
             <div class="text-xs text-espressoMuted text-center sm:text-right font-medium">
-                © 2026 Botspresso Inc. Todos los derechos reservados.<br>
-                Operando en Ciudad de México y Área Metropolitana.
+                Contacto directo: <a href="mailto:simon.cohen@botspresso.com.mx" class="text-espresso font-bold underline">simon.cohen@botspresso.com.mx</a><br>
+                © 2026 Botspresso Inc. Todos los derechos reservados.
             </div>
         </div>
     </footer>
 
-    <!-- LÓGICA INTERACTIVA -->
+    <!-- LÓGICA JAVASCRIPT -->
     <script>
+        // Manejo del formulario de contacto conectado a Formspree
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const status = document.getElementById('form-status');
+            const btn = document.getElementById('btn-submit');
+            const nombre = document.getElementById('form-nombre').value;
+            const email = document.getElementById('form-email').value;
+
+            btn.disabled = true;
+            btn.innerText = "Enviando solicitud...";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    status.className = "text-center p-3.5 rounded-xl text-xs font-bold mt-2 bg-emerald-100 text-emerald-800 border-2 border-emerald-300";
+                    status.innerText = `¡Gracias, ${nombre}! Tu solicitud ha sido enviada con éxito. Simon Cohen te contactará en breve al correo ${email}.`;
+                    status.classList.remove('hidden');
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        status.className = "text-center p-3 rounded-xl text-xs font-bold mt-2 bg-red-100 text-red-700 border border-red-300";
+                        status.innerText = data.errors.map(error => error.message).join(", ");
+                    } else {
+                        status.className = "text-center p-3 rounded-xl text-xs font-bold mt-2 bg-amber-100 text-amber-800 border border-amber-300";
+                        status.innerText = "Hubo un detalle al enviar el formulario. Por favor contáctanos directamente a simon.cohen@botspresso.com.mx";
+                    }
+                    status.classList.remove('hidden');
+                }
+            } catch (error) {
+                status.className = "text-center p-3 rounded-xl text-xs font-bold mt-2 bg-red-100 text-red-700 border border-red-300";
+                status.innerText = "Error de conexión al enviar el formulario. Por favor intenta de nuevo.";
+                status.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Enviar Solicitud a simon.cohen@botspresso.com.mx";
+            }
+        }
+
         // Control de Audio Reel Vertical
         function toggleAudioReel() {
             const video = document.getElementById('reel-video');
@@ -591,7 +637,7 @@
             }
         }
 
-        // Iniciar reproducción automática del reel al hacer scroll hasta él
+        // Observer para auto-play del reel vertical
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const video = document.getElementById('reel-video');
@@ -685,31 +731,6 @@
             const extraShot = tieneExtraShot ? 12 : 0;
             const total = precioBase + precioLeche + precioJarabe + extraShot;
             document.getElementById('ticket-total').innerText = `$${total.toFixed(2)} MXN`;
-        }
-
-        function recalcularROI() {
-            const cups = parseInt(document.getElementById('calc-cups').value);
-            document.getElementById('calc-cups-label').innerText = `${cups} tazas`;
-
-            const diasMes = 30;
-            const ticketPromedio = 60;
-            const costoVariableNeto = 12.07;
-
-            const totalTazasMes = cups * diasMes;
-            const ventaMensual = totalTazasMes * ticketPromedio;
-            const costoInsumos = totalTazasMes * costoVariableNeto;
-            const margenBruto = ventaMensual - costoInsumos;
-
-            document.getElementById('calc-venta').innerText = `$${Math.round(ventaMensual).toLocaleString('es-MX')}`;
-            document.getElementById('calc-costo').innerText = `-$${Math.round(costoInsumos).toLocaleString('es-MX')}`;
-            document.getElementById('calc-margen').innerText = `$${Math.round(margenBruto).toLocaleString('es-MX')}`;
-        }
-
-        function enviarContacto(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('contacto-nombre').value;
-            alert(`¡Gracias, ${nombre}! Nos pondremos en contacto contigo a la brevedad.`);
-            e.target.reset();
         }
     </script>
 </body>
