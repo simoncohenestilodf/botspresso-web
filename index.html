@@ -134,11 +134,12 @@
                         </div>
 
                         <div class="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-espresso bg-espresso">
-                            <video id="hero-video" autoplay loop muted playsinline class="w-full h-full object-cover">
+                            <video id="hero-video" autoplay loop muted playsinline preload="auto" poster="/logo.png" class="w-full h-full object-cover cursor-pointer" onclick="this.paused ? this.play() : this.pause()">
                                 <source src="/video-horizontal.mp4" type="video/mp4">
-                                <img src="/logo.png" alt="Botspresso" class="w-full h-full object-contain p-8 bg-creamBg">
+                                <source src="https://raw.githubusercontent.com/simoncohenestilodf/botspresso-web/main/video-horizontal.mp4" type="video/mp4">
+                                <source src="https://media.githubusercontent.com/media/simoncohenestilodf/botspresso-web/main/video-horizontal.mp4" type="video/mp4">
                             </video>
-                            <div class="absolute bottom-3 left-3 bg-espresso/80 backdrop-blur-sm text-creamBg text-[10px] font-bold px-2.5 py-1 rounded-md">
+                            <div class="absolute bottom-3 left-3 bg-espresso/80 backdrop-blur-sm text-creamBg text-[10px] font-bold px-2.5 py-1 rounded-md pointer-events-none">
                                 ● Extracción en proceso
                             </div>
                         </div>
@@ -167,8 +168,10 @@
                         </div>
 
                         <div class="relative aspect-[9/16] rounded-[28px] overflow-hidden border-2 border-espresso bg-espresso">
-                            <video id="reel-video" loop playsinline muted class="w-full h-full object-cover">
+                            <video id="reel-video" autoplay loop playsinline muted preload="auto" poster="/logo.png" class="w-full h-full object-cover cursor-pointer" onclick="this.paused ? this.play() : this.pause()">
                                 <source src="/video-vertical.mp4" type="video/mp4">
+                                <source src="https://raw.githubusercontent.com/simoncohenestilodf/botspresso-web/main/video-vertical.mp4" type="video/mp4">
+                                <source src="https://media.githubusercontent.com/media/simoncohenestilodf/botspresso-web/main/video-vertical.mp4" type="video/mp4">
                             </video>
 
                             <button id="btn-audio-toggle" onclick="toggleAudioReel()" class="absolute bottom-4 right-4 bg-espresso/90 hover:bg-espresso text-creamBg px-3.5 py-2 rounded-xl text-xs font-black shadow-lg flex items-center gap-2 border border-creamBg/20 transition-transform active:scale-95">
@@ -425,7 +428,7 @@
                     </a>
                 </div>
 
-                <!-- PATIO SANTA FE (CORREGIDO A 24/7) -->
+                <!-- PATIO SANTA FE -->
                 <div class="bg-creamBg border-2 border-espresso rounded-3xl p-8 space-y-6 transition hover:shadow-warm">
                     <div class="flex justify-between items-start">
                         <div>
@@ -578,6 +581,34 @@
 
     <!-- LÓGICA JAVASCRIPT -->
     <script>
+        // Forzar carga y reproducción de videos en todos los navegadores
+        window.addEventListener('DOMContentLoaded', () => {
+            const heroVideo = document.getElementById('hero-video');
+            const reelVideo = document.getElementById('reel-video');
+
+            if (heroVideo) {
+                heroVideo.muted = true;
+                heroVideo.play().catch(() => {});
+            }
+
+            if (reelVideo) {
+                reelVideo.muted = true;
+                reelVideo.play().catch(() => {});
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            reelVideo.play().catch(() => {});
+                        } else {
+                            reelVideo.pause();
+                        }
+                    });
+                }, { threshold: 0.25 });
+
+                observer.observe(reelVideo);
+            }
+        });
+
         // Manejo del formulario de contacto conectado a Formspree sin exponer datos personales
         async function handleFormSubmit(event) {
             event.preventDefault();
@@ -643,23 +674,6 @@
                 text.innerText = 'Activar Audio';
             }
         }
-
-        // Observer para auto-play del reel vertical
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const video = document.getElementById('reel-video');
-                if (entry.isIntersecting) {
-                    video.play().catch(() => {});
-                } else {
-                    video.pause();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const videoElement = document.getElementById('reel-video');
-            if (videoElement) observer.observe(videoElement);
-        });
 
         // Menú Drink Lab
         let baseActual = 'Americano';
